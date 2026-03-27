@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Edit2, Calendar, Activity, AlertCircle, X, Check, Loader } from 'lucide-react';
+import { Plus, Edit2, Calendar, Activity, AlertCircle, Trash2, Check } from 'lucide-react';
 
 const Scores = () => {
   const [scores, setScores] = useState([]);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { Check, Crown, Sparkles, CreditCard, Heart, AlertCircle, Shield, Loader } from 'lucide-react';
+import { Check, Crown, Sparkles, Heart, AlertCircle, Shield, Loader } from 'lucide-react';
 
 const Subscription = () => {
   const { user, updateUser } = useAuth();

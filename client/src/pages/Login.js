@@ -34,7 +34,7 @@ const Login = () => {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-md w-full space-y-6"
       >
-        {/* Header - Reduced spacing */}
+        {/* Header */}
         <div className="text-center">
           <motion.div
             initial={{ scale: 0 }}
@@ -53,7 +53,7 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Form - Tighter spacing */}
+        {/* Form */}
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           {error && (
             <motion.div
@@ -128,10 +128,15 @@ const Login = () => {
               </label>
             </div>
 
+            {/* FIXED: Changed from <a> to <button> */}
             <div>
-              <a href="#" className="font-medium text-green-600 hover:text-green-500">
+              <button 
+                type="button" 
+                onClick={() => alert('Please contact support to reset your password')}
+                className="font-medium text-green-600 hover:text-green-500"
+              >
                 Forgot password?
-              </a>
+              </button>
             </div>
           </div>
 
@@ -150,7 +155,7 @@ const Login = () => {
           </button>
         </form>
 
-        {/* Demo Credentials - Compact */}
+        {/* Demo Credentials */}
         <div className="mt-4">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
