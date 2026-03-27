@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <meta name="theme-color" content="#10b981" />
+    <meta name="description" content="Golf For Good - Play golf, support charities, and win amazing prizes. Join thousands of golfers making a difference in the world." />
+    <meta name="keywords" content="golf, charity, subscription, prizes, stableford, golf scores, fundraising, donation" />
+    <meta name="author" content="Digital Heroes" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://golfforgood.com" />
+    <meta property="og:title" content="Golf For Good - Play Golf, Support Charities, Win Prizes" />
+    <meta property="og:description" content="Join Golf For Good to track your scores, support charities, and participate in monthly draws with amazing prizes." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://golfforgood.com" />
+    <meta property="twitter:title" content="Golf For Good - Play Golf, Support Charities, Win Prizes" />
+    <meta property="twitter:description" content="Join Golf For Good to track your scores, support charities, and participate in monthly draws with amazing prizes." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/twitter-image.jpg" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external resources for better performance -->
+    <link rel="preconnect" href="https://checkout.razorpay.com" />
+    <link rel="preconnect" href="https://api.razorpay.com" />
+    
+    <title>Golf For Good | Play Golf, Support Charities, Win Prizes</title>
+    
+    <style>
+      /* Critical CSS for initial render */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      }
+      
+      /* Loading spinner */
+      .initial-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #e5e7eb;
+        border-top-color: #10b981;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>Please enable JavaScript to use Golf For Good platform.</p>
+        <p>You can still explore our charities and learn about our mission:</p>
+        <ul style="list-style: none; padding: 20px;">
+          <li><a href="/charities">View Charities</a></li>
+          <li><a href="/draws">Learn About Draws</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        </ul>
+      </div>
+    </noscript>
+    
+    <div id="root">
+      <div class="initial-loading">
+        <div class="spinner"></div>
+      </div>
+    </div>
+    
+    <!-- Razorpay Script - Loaded dynamically but included here for fallback -->
+    <script>
+      // Check if Razorpay is available, if not, it will be loaded dynamically by the app
+      window.RAZORPAY_LOADED = false;
+      window.addEventListener('load', function() {
+        // Remove loading spinner after React mounts (React will replace the content)
+        setTimeout(function() {
+          const loadingDiv = document.querySelector('.initial-loading');
+          if (loadingDiv && !document.getElementById('root').hasChildNodes()) {
+            loadingDiv.style.display = 'none';
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
