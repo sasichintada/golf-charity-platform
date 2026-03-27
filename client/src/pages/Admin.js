@@ -85,7 +85,7 @@ const Admin = () => {
   const simulateDraw = async () => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/admin/draws/simulate`, { drawType });
-      setSimulationResult(response.data);
+      // setSimulationResult(response.data);
       alert(`Simulation complete!\n\nWinning Numbers: ${response.data.winningNumbers.join(', ')}\n5-Match: ${response.data.winners.fiveMatch.length}\n4-Match: ${response.data.winners.fourMatch.length}\n3-Match: ${response.data.winners.threeMatch.length}\nTotal Prize Pool: $${response.data.prizeDistribution.total}`);
     } catch (error) {
       alert('Error simulating draw: ' + (error.response?.data?.error || 'Unknown error'));
