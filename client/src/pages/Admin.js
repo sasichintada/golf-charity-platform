@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import {
-  Users, Trophy, Heart, TrendingUp, Settings, Play,
+  Users, Trophy, Heart, Settings, Play,
   CheckCircle, XCircle, Plus, Edit2, Trash2,
-  BarChart, DollarSign, Calendar, Award, Eye, RefreshCw, Upload
+  BarChart, DollarSign, Calendar, Award, RefreshCw
 } from 'lucide-react';
 
 const Admin = () => {
@@ -19,7 +19,7 @@ const Admin = () => {
   const [runDrawLoading, setRunDrawLoading] = useState(false);
   const [showCharityModal, setShowCharityModal] = useState(false);
   const [editingCharity, setEditingCharity] = useState(null);
-  const [simulationResult, setSimulationResult] = useState(null);
+  //const [simulationResult, setSimulationResult] = useState(null);
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedCharityForEvent, setSelectedCharityForEvent] = useState(null);
   const [eventForm, setEventForm] = useState({
