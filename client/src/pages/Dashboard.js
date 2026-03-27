@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, Heart, Calendar, Award, TrendingUp, Target, Crown, Upload, X, Loader } from 'lucide-react';
 
 const Dashboard = () => {
-  const { user, updateUser } = useAuth();
+  const { user } = useAuth();
   const [stats, setStats] = useState({
     scores: [],
     winnings: [],

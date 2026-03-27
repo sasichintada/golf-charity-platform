@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { motion } from 'framer-motion';
-import { Trophy, Calendar, Award, Users, DollarSign, TrendingUp, Info } from 'lucide-react';
+import { Trophy, Calendar, Award, Info } from 'lucide-react';
 
 const Draws = () => {
   const [draws, setDraws] = useState([]);
@@ -23,14 +23,16 @@ const Draws = () => {
     }
   };
 
-  const getMatchColor = (matchType) => {
-    switch(matchType) {
-      case '5-match': return 'bg-yellow-100 text-yellow-800';
-      case '4-match': return 'bg-blue-100 text-blue-800';
-      case '3-match': return 'bg-green-100 text-green-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
+  // getMatchColor function is not used in the component, so it's removed
+  // If you need it later, uncomment below:
+  // const getMatchColor = (matchType) => {
+  //   switch(matchType) {
+  //     case '5-match': return 'bg-yellow-100 text-yellow-800';
+  //     case '4-match': return 'bg-blue-100 text-blue-800';
+  //     case '3-match': return 'bg-green-100 text-green-800';
+  //     default: return 'bg-gray-100 text-gray-800';
+  //   }
+  // };
 
   if (loading) {
     return (

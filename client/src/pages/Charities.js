@@ -474,7 +474,7 @@ const Charities = () => {
                       type="button"
                       onClick={() => setDonationAmount(amount)}
                       className={`py-2 px-3 rounded-lg border transition ${
-                        donationAmount == amount 
+                        donationAmount === amount 
                           ? 'border-green-500 bg-green-50 text-green-600'
                           : 'border-gray-300 hover:border-green-500'
                       }`}
